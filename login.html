@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-modal">
+        <span class="close-button">&times;</span>
+        <h2>Log in</h2>
+        <form>
+            <label for="email">Your name or email address:</label>
+            <input type="text" id="email">
+            <span></span> <!-- Placeholder for alignment -->
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            
+            <a href="#" class="forgot-password">Forgot your password?</a>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="stay-logged-in">
+                <label for="stay-logged-in">Stay logged in</label>
+            </div>
+
+            <button type="submit">Log in</button>
+        </form>
+        <div class="footer">
+            Don't have an account? <a href="#">Register now</a>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleButton = document.querySelector('.toggle-password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleButton.textContent = 'Hide';
+            } else {
+                passwordField.type = 'password';
+                toggleButton.textContent = 'Show';
+            }
+        }
+    </script>
+</body>
+</html>
