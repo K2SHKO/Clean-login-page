@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <title>Random Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-modal">
-        <span class="close-button">&times;</span>
+    <nav class="navbar">
+        <div class="navbar-brand">MyWebsite</div>
+        <button class="login-btn" onclick="toggleLoginModal()">Log In</button>
+    </nav>
+    <div class="content">
+        <h1>Welcome to My Random Page</h1>
+        <p>This is some random content on the page.</p>
+    </div>
+    <div class="overlay" id="overlay" onclick="toggleLoginModal()"></div>
+    <div class="login-modal" id="loginModal">
+        <span class="close-button" onclick="toggleLoginModal()">&times;</span>
         <h2>Log in</h2>
         <form>
             <label for="email">Your name or email address:</label>
             <input type="text" id="email">
-            <span></span> <!-- Placeholder for alignment -->
+            <span></span>
 
             <label for="password">Password:</label>
             <input type="password" id="password">
@@ -33,18 +42,6 @@
         </div>
     </div>
 
-    <script>
-        function togglePassword() {
-            const passwordField = document.getElementById('password');
-            const toggleButton = document.querySelector('.toggle-password');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                toggleButton.textContent = 'Hide';
-            } else {
-                passwordField.type = 'password';
-                toggleButton.textContent = 'Show';
-            }
-        }
-    </script>
+    <script src="scripts/animations.js"></script>
 </body>
 </html>

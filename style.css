@@ -1,21 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
+
 body {
     font-family: 'Josefin Sans', sans-serif;
     background-color: #1c1c1c;
     color: #fff;
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     height: 100vh;
 }
 
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #ff0080;
+}
+
+.login-btn {
+    background-color: #ff0080;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background-color: #e60073;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
 .login-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #1b1b1b;
-    width: 800px;
+    width: 90%;
+    max-width: 700px;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
 .login-modal h2 {
@@ -23,17 +77,15 @@ body {
     color: #ff0080;
     margin: 0;
     text-align: left;
-    position: absolute;
-    top: 20px;
-    left: 20px; 
-    width: calc(100% - 40px); 
+    position: relative;
+    width: 100%;
     box-sizing: border-box;
 }
 
 .login-modal h2::after {
     content: '';
     display: block;
-    width: 100%; 
+    width: 100%;
     height: 2px;
     background-color: #666;
     margin-top: 5px;
@@ -44,7 +96,7 @@ body {
     grid-template-columns: 1fr 2fr auto;
     gap: 15px;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .login-modal label {
@@ -176,4 +228,47 @@ body {
 
 .close-button:hover {
     color: #e60073;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .login-modal {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-modal h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-modal form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .login-modal label {
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .forgot-password {
+        grid-column: span 1;
+        text-align: left;
+    }
+
+    .login-modal button {
+        grid-column: span 1;
+    }
+
+    .login-modal .footer {
+        grid-column: span 1;
+    }
 }
